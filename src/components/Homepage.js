@@ -1,110 +1,74 @@
 import React from "react";
-import { Carousel, Container, Navbar, Nav, Row, Col, Card } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Container, Carousel } from "react-bootstrap";
+import { FaComments } from "react-icons/fa";
+import "bootstrap/dist/css/bootstrap.min.css";
+import img1 from "../assets/img1.jpg";
+import img2 from "../assets/img2.jpg";
+import img3 from "../assets/img3.jpg";
 
-const HomePage = () => {
+const Homepage = () => {
   return (
-    <div className="bg-light min-vh-100">
-      {/* Navbar */}
-      <Navbar bg="light" expand="lg" sticky="top" className="shadow-sm">
+    <>
+      {/* Navbar with Spaced Dropdowns */}
+      <Navbar expand="lg" style={{ position: "absolute", width: "100%", zIndex: 2 }}>
         <Container>
-          <Navbar.Brand href="#">London Homestays</Navbar.Brand>
+          
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link href="#">London Homestays</Nav.Link>
-              <Nav.Link href="#">UK Student Residences</Nav.Link>
-              <Nav.Link href="#">Study English in London</Nav.Link>
-              <Nav.Link href="#">Guardianship Services</Nav.Link>
+            <Nav className="ms-auto d-flex gap-3"> {/* Added gap between dropdowns */}
+              <NavDropdown title="London Homestays" className="nav-red bg-white text-light">
+                <NavDropdown.Item href="#">Option 1</NavDropdown.Item>
+                <NavDropdown.Item href="#">Option 2</NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown title="UK Student Residences" className="nav-green bg-white text-light">
+                <NavDropdown.Item href="#">Option 1</NavDropdown.Item>
+                <NavDropdown.Item href="#">Option 2</NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown title="Study English in London" className="nav-orange bg-white text-light">
+                <NavDropdown.Item href="#">Option 1</NavDropdown.Item>
+                <NavDropdown.Item href="#">Option 2</NavDropdown.Item>
+              </NavDropdown>
+              <NavDropdown title="Guardianship Services" className="nav-purple bg-white text-light
+              ">
+                <NavDropdown.Item href="#">Option 1</NavDropdown.Item>
+                <NavDropdown.Item href="#">Option 2</NavDropdown.Item>
+              </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      {/* Hero Carousel */}
-      <Carousel className="mt-4">
+      {/* Carousel with Reduced Height */}
+      <Carousel style={{ height: "80vh" }}> {/* Reduced height */}
         <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://via.placeholder.com/1024x400?text=London+View"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>We are London Homestays...</h3>
-          </Carousel.Caption>
+          <img className="d-block w-100" src={img1} alt="London" style={{ height: "80vh", objectFit: "cover" }} />
         </Carousel.Item>
         <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://via.placeholder.com/1024x400?text=Big+Ben"
-            alt="Second slide"
-          />
-          <Carousel.Caption>
-            <h3>Explore Big Ben and Beyond...</h3>
-          </Carousel.Caption>
+          <img className="d-block w-100" src={img2} alt="Big Ben" style={{ height: "80vh", objectFit: "cover" }} />
         </Carousel.Item>
         <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://via.placeholder.com/1024x400?text=River+Thames"
-            alt="Third slide"
-          />
-          <Carousel.Caption>
-            <h3>Experience the Beauty of the Thames...</h3>
-          </Carousel.Caption>
+          <img className="d-block w-100" src={img3} alt="UK" style={{ height: "80vh", objectFit: "cover" }} />
         </Carousel.Item>
       </Carousel>
 
-      {/* Services Section */}
-      <Container className="my-5">
-        <Row className="g-4">
-          <Col md={3}>
-            <Card className="shadow-sm">
-              <Card.Body>
-                <Card.Title>London Homestays</Card.Title>
-                <Card.Text>Find comfortable homestays around London.</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md={3}>
-            <Card className="shadow-sm">
-              <Card.Body>
-                <Card.Title>UK Student Residences</Card.Title>
-                <Card.Text>Stay near top universities in the UK.</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md={3}>
-            <Card className="shadow-sm">
-              <Card.Body>
-                <Card.Title>Study English in London</Card.Title>
-                <Card.Text>Improve your English while living in London.</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-          <Col md={3}>
-            <Card className="shadow-sm">
-              <Card.Body>
-                <Card.Title>Guardianship Services</Card.Title>
-                <Card.Text>Trusted guardianship for international students.</Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+      {/* Centered Home Quote */}
+      <div className="home-quote" style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", color: "white", fontSize: "2rem", fontWeight: "bold", textShadow: "2px 2px 10px rgba(0,0,0,0.5)" }}>
+        "Your Best Choice for a Perfect Stay"
+      </div>
 
-      {/* Footer */}
-      <footer className="bg-dark text-white text-center py-4">
-        <Container>
-          <p>© 2025 London Homestays. All Rights Reserved.</p>
-          <div className="d-flex justify-content-center gap-3 mt-3">
-            <a href="#" className="text-white text-decoration-none">Facebook</a>
-            <a href="#" className="text-white text-decoration-none">Twitter</a>
-            <a href="#" className="text-white text-decoration-none">Instagram</a>
-          </div>
-        </Container>
-      </footer>
-    </div>
+      {/* Message Box */}
+      <div className="message-box" style={{ position: "fixed", bottom: 100, right: 20, padding: "10px 20px", background: "#ffffff", borderRadius: "8px", boxShadow: "0px 0px 10px rgba(0,0,0,0.2)" }}>
+        <p>We're Online! How can we help you today?</p>
+      </div>
+
+      {/* Chat Icon */}
+      <div className="chat-widget" style={{ position: "fixed", bottom: 20, right: 20, cursor: "pointer" }}>
+        <button className="btn btn-success" style={{ borderRadius: "50%", padding: "15px" }}>
+          <FaComments size={24} />
+        </button>
+      </div>
+    </>
   );
 };
 
-export default HomePage;
+export default Homepage;
