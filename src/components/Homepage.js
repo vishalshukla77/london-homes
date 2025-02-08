@@ -9,37 +9,67 @@ import img3 from "../assets/img3.jpg";
 const Homepage = () => {
   return (
     <>
-      {/* Navbar with Spaced Dropdowns */}
+      {/* Navbar with Expanded Dropdowns */}
       <Navbar expand="lg" style={{ position: "absolute", width: "100%", zIndex: 2 }}>
         <Container>
-          
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ms-auto d-flex gap-3"> {/* Added gap between dropdowns */}
-              <NavDropdown title="London Homestays" className="nav-red bg-white text-light">
-                <NavDropdown.Item href="#">Option 1</NavDropdown.Item>
-                <NavDropdown.Item href="#">Option 2</NavDropdown.Item>
+            <Nav className="ms-auto d-flex gap-3">
+              <NavDropdown title="London Homestays" className="nav-red bg-white text-dark" style={{ width: "100%" }}>
+                <div className="dropdown-large">
+                  <NavDropdown.Item href="#">Book a Homestay in London</NavDropdown.Item>
+                  <NavDropdown.Item href="#">How it Works</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Which Accommodation?</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Information for Agents & Schools</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Why Work With Us?</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Airport Transfers</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Living and Studying in the UK</NavDropdown.Item>
+                  <NavDropdown.Item href="#">UK Student Visa Guidelines</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Arriving in London</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Homestay Information</NavDropdown.Item>
+                </div>
               </NavDropdown>
-              <NavDropdown title="UK Student Residences" className="nav-green bg-white text-light">
-                <NavDropdown.Item href="#">Option 1</NavDropdown.Item>
-                <NavDropdown.Item href="#">Option 2</NavDropdown.Item>
+              <NavDropdown title="UK Student Residences" className="nav-green bg-white text-dark" style={{ width: "60%" }}>
+                <div className="dropdown-large">
+                  <NavDropdown.Item href="#">Student residence information</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Apply for a student residence</NavDropdown.Item>
+                  <NavDropdown.Item href="#">How to book a student residence</NavDropdown.Item>
+                  <NavDropdown.Item href="#">FAQs for residences in London</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Register your residence</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Which accommodation?</NavDropdown.Item>
+                  <NavDropdown.Item href="#">London location guides</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Supplementary products</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Find your city</NavDropdown.Item>
+                </div>
               </NavDropdown>
-              <NavDropdown title="Study English in London" className="nav-orange bg-white text-light">
-                <NavDropdown.Item href="#">Option 1</NavDropdown.Item>
-                <NavDropdown.Item href="#">Option 2</NavDropdown.Item>
+              <NavDropdown title="Study English in London" className="nav-orange bg-white text-dark" style={{ width: "60%" }}>
+                <div className="dropdown-large">
+                  <NavDropdown.Item href="#">Student residence information</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Apply for a student residence</NavDropdown.Item>
+                  <NavDropdown.Item href="#">How to book a student residence</NavDropdown.Item>
+                  <NavDropdown.Item href="#">FAQs for residences in London</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Register your residence</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Which accommodation?</NavDropdown.Item>
+                  <NavDropdown.Item href="#">London location guides</NavDropdown.Item>
+                </div>
               </NavDropdown>
-              <NavDropdown title="Guardianship Services" className="nav-purple bg-white text-light
-              ">
-                <NavDropdown.Item href="#">Option 1</NavDropdown.Item>
-                <NavDropdown.Item href="#">Option 2</NavDropdown.Item>
+              <NavDropdown title="Guardianship Services" className="nav-purple bg-white text-dark" style={{ width: "60%" }}>
+                <div className="dropdown-large">
+                  <NavDropdown.Item href="#">Guardianship Services in the UK</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Apply for a Guardian in the UK</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Guardianship packages and definitions</NavDropdown.Item>
+                  <NavDropdown.Item href="#">How Guardianships work</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Guardianship FAQs</NavDropdown.Item>
+                  <NavDropdown.Item href="#">Schools and Agents</NavDropdown.Item>
+                </div>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      {/* Carousel with Reduced Height */}
-      <Carousel style={{ height: "80vh" }}> {/* Reduced height */}
+      {/* Carousel */}
+      <Carousel style={{ height: "80vh" }}>
         <Carousel.Item>
           <img className="d-block w-100" src={img1} alt="London" style={{ height: "80vh", objectFit: "cover" }} />
         </Carousel.Item>
@@ -56,7 +86,7 @@ const Homepage = () => {
         "Your Best Choice for a Perfect Stay"
       </div>
 
-      {/* Message Box */}
+      {/* Chat Section */}
       <div className="message-box" style={{ position: "fixed", bottom: 100, right: 20, padding: "10px 20px", background: "#ffffff", borderRadius: "8px", boxShadow: "0px 0px 10px rgba(0,0,0,0.2)" }}>
         <p>We're Online! How can we help you today?</p>
       </div>
